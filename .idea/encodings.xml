@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/guibao/giser/mystadium/waterfall/MultiColumnListView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/guibao/giser/mystadium/waterfall/MultiColumnPullToRefreshListView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/guibao/giser/mystadium/waterfall/PLA_AbsListView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/guibao/giser/mystadium/waterfall/PLA_AdapterView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/guibao/giser/mystadium/waterfall/PLA_HeaderViewListAdapter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/guibao/giser/mystadium/waterfall/PLA_ListView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/guibao/giser/mystadium/waterfall/PullToRefreshSampleActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/guibao/giser/mystadium/waterfall/SampleActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/act_pull_to_refresh_sample.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/act_sample.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/item_sample.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/ptr_header.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/ids.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/ids.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/pla__attrs.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/pla__attrs.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/ptr_default_style.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/ptr_default_style.xml" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

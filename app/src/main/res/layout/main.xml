@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical" android:layout_width="match_parent"
+android:layout_height="match_parent">
+<TabHost android:id="@+id/tabhost" android:layout_width="fill_parent" android:layout_height="580dp"
+    android:layout_gravity="top">
+    <LinearLayout   android:id="@+id/tab2Layer1" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <!-- TabWidget的id属性必须为 @android:id/tabs-->
+        <TabWidget android:id="@android:id/tabs" android:orientation="horizontal" android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <!-- FrameLayout的id属性必须为 @android:id/tabcontent-->
+        <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@+id/view1"  android:layout_width="fill_parent" android:layout_height="fill_parent"
+                android:text="AFAFAF" />
+            <TextView android:id="@+id/view2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+                android:text="AFAFAF" />
+            <TextView android:id="@+id/view3" android:layout_width="fill_parent" android:layout_height="fill_parent"
+                android:text="SDFGF" />
+            <TextView android:id="@+id/view4" android:layout_width="fill_parent" android:layout_height="fill_parent"
+                android:text="SDFGF" />
+            <TextView android:id="@+id/view5" android:layout_width="fill_parent" android:layout_height="fill_parent"
+                android:text="SDFGF" />
+        </FrameLayout>
+    </LinearLayout>
+    </TabHost>
+
+    <TabHost android:id="@+id/tabhost2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="580dp">
+        <LinearLayout android:id="@+id/tab2Layer2"  android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <!-- TabWidget的id属性必须为 @android:id/tabs-->
+            <TabWidget android:id="@android:id/tabs" android:orientation="horizontal" android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <!-- FrameLayout的id属性必须为 @android:id/tabcontent-->
+            <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:id="@+id/view12"  android:layout_width="fill_parent" android:layout_height="fill_parent"
+                    android:text="AFAFAF" />
+                <TextView android:id="@+id/view22" android:layout_width="fill_parent" android:layout_height="fill_parent"
+                    android:text="AFAFAF" />
+                <TextView android:id="@+id/view32" android:layout_width="fill_parent" android:layout_height="fill_parent"
+                    android:text="SDFGF" />
+                <TextView android:id="@+id/view42" android:layout_width="fill_parent" android:layout_height="fill_parent"
+                    android:text="SDFGF" />
+                <TextView android:id="@+id/view52" android:layout_width="fill_parent" android:layout_height="fill_parent"
+                    android:text="SDFGF" />
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+<include layout="@layout/bottom_menu" android:layout_width="fill_parent" android:layout_height="wrap_content"
+ />
+</LinearLayout>
