@@ -13,11 +13,11 @@
         android:drawableTop="@mipmap/nav2"
         android:layout_alignParentLeft="true"
         android:layout_width="95dip"
-        android:layout_height="wrap_content"
+        android:layout_height="60dip"
         android:background="@drawable/myview"
-
         android:state_selected="true"
-        android:textColor="#fffffff4">
+        android:textColor="#fffffff4"
+        android:textSize="20dip">
     </TextView>
 
     <TextView
@@ -26,11 +26,15 @@
         android:gravity="center_horizontal"
         android:drawableTop="@mipmap/route2"
         android:layout_toRightOf="@id/changdi"
-
         android:layout_width="95dip"
-        android:layout_height="wrap_content"
+        android:layout_height="60dip"
         android:background="@drawable/myview"
-        android:textColor="#fffffff4">
+        android:textColor="#fffffff4"
+        android:textSize="20dip"
+        android:elegantTextHeight="false"
+        android:textAlignment="center"
+        android:nestedScrollingEnabled="true"
+        android:linksClickable="true">
     </TextView>
 
     <TextView
@@ -40,10 +44,11 @@
         android:drawableTop="@mipmap/msg"
         android:layout_toRightOf="@id/huodong"
         android:layout_width="95dip"
-        android:layout_height="wrap_content"
-
+        android:layout_height="60dip"
         android:background="@drawable/myview"
-        android:textColor="#fffffff4">
+        android:textColor="#fffffff4"
+        android:textSize="20dip"
+        android:editable="false">
     </TextView>
 
     <TextView
@@ -53,9 +58,9 @@
         android:drawableTop="@mipmap/user"
         android:layout_toRightOf="@id/tvMsg"
         android:layout_width="97dip"
-
-        android:layout_height="wrap_content"
+        android:layout_height="60dip"
         android:background="@drawable/myview"
-        android:textColor="#fffffff4">
+        android:textColor="#fffffff4"
+        android:textSize="20dip">
     </TextView>
 </RelativeLayout>

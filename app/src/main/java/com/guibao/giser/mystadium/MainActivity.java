@@ -102,18 +102,18 @@ public class MainActivity extends Activity {
         TabHost tabHost2 = (TabHost) findViewById(R.id.tabhost2);
         tabHost2.setup();
         // 如果没有继承TabActivity时，通过该种方法加载启动tabHost
-        tabHost2.addTab(tabHost2.newTabSpec("tabYimaoqiu").setIndicator("羽毛球",
+        tabHost2.addTab(tabHost2.newTabSpec("tabYimaoqiu").setIndicator("羽毛球1",
                 getResources().getDrawable(R.mipmap.ic_launcher)).setContent(
                 R.id.view12));
 
-        tabHost2.addTab(tabHost2.newTabSpec("tabZuqiu").setIndicator("足球")
+        tabHost2.addTab(tabHost2.newTabSpec("tabZuqiu").setIndicator("足球1")
                 .setContent(R.id.view22));
 
-        tabHost2.addTab(tabHost2.newTabSpec("tabLanqiu").setIndicator("篮球")
+        tabHost2.addTab(tabHost2.newTabSpec("tabLanqiu").setIndicator("篮球1")
                 .setContent(R.id.view32));
-        tabHost2.addTab(tabHost2.newTabSpec("tabWangqiu").setIndicator("网球")
+        tabHost2.addTab(tabHost2.newTabSpec("tabWangqiu").setIndicator("网球1")
                 .setContent(R.id.view42));
-        tabHost2.addTab(tabHost2.newTabSpec("tabBingpang").setIndicator("兵乓球")
+        tabHost2.addTab(tabHost2.newTabSpec("tabBingpang").setIndicator("兵乓球1")
                 .setContent(R.id.view52));
 
         tabHost2.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
@@ -133,6 +133,7 @@ public class MainActivity extends Activity {
                 if (tabId.equals("tabLanqiu")) {
                     TextView tv = (TextView) findViewById(R.id.view32);
                     tv.setText("dkdkdkdk33333");
+                    setContentView(R.layout.lazyscroll);
                 }
 
                 if (tabId.equals("tabWangqiu")) {

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:orientation="vertical" android:layout_width="match_parent"
 android:layout_height="match_parent">
-<TabHost android:id="@+id/tabhost" android:layout_width="fill_parent" android:layout_height="580dp"
+<TabHost android:id="@+id/tabhost" android:layout_width="fill_parent" android:layout_height="560dp"
     android:layout_gravity="top">
     <LinearLayout   android:id="@+id/tab2Layer1" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
         <!-- TabWidget的id属性必须为 @android:id/tabs-->
@@ -24,7 +24,7 @@ android:layout_height="match_parent">
     </LinearLayout>
     </TabHost>
 
-    <TabHost android:id="@+id/tabhost2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="580dp">
+    <TabHost android:id="@+id/tabhost2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="560dp">
         <LinearLayout android:id="@+id/tab2Layer2"  android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
             <!-- TabWidget的id属性必须为 @android:id/tabs-->
             <TabWidget android:id="@android:id/tabs" android:orientation="horizontal" android:layout_width="fill_parent"
@@ -44,6 +44,5 @@ android:layout_height="match_parent">
             </FrameLayout>
         </LinearLayout>
     </TabHost>
-<include layout="@layout/bottom_menu" android:layout_width="fill_parent" android:layout_height="wrap_content"
- />
+<include layout="@layout/bottom_menu"/>
 </LinearLayout>
