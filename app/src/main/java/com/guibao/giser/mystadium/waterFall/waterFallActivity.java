@@ -14,6 +14,7 @@ package com.guibao.giser.mystadium.waterFall;
         import android.widget.TextView;
         import android.widget.Toast;
 
+        import com.guibao.giser.mystadium.MainActivity;
         import com.guibao.giser.mystadium.R;
 
         import java.io.IOException;
@@ -22,7 +23,7 @@ package com.guibao.giser.mystadium.waterFall;
         import java.util.Arrays;
         import java.util.List;
 
-public class waterFallActivity extends Activity implements
+public class waterFallActivity  implements
         LazyScrollView.OnScrollListener {
     private LazyScrollView lazyScrollView;
     private LinearLayout waterfall_container;
@@ -40,26 +41,43 @@ public class waterFallActivity extends Activity implements
 
     private int item_width;// 姣忎竴涓猧tem鐨勫搴?	private final String file = "images";
     int column =1;
-    String file= "images";
+    String file= "";
+
+   public  boolean IsLoaded = false;
+
+    MainActivity main;
+    int waterfall_scrollId;
+    int watercontainerId;
+    int progressbarId;
+    int loadtextId;
+    public waterFallActivity(MainActivity main,String file,int waterfall_scrollId,int watercontainerId,int progressbarId,int loadtextId)
+    {
+        this.main = main;
+        this.file = file;
+        this.waterfall_scrollId = waterfall_scrollId;
+        this.watercontainerId = watercontainerId;
+        this.progressbarId = progressbarId;
+        this.loadtextId = loadtextId;
+    }
+
     /***
      * init view
      */
     public void initView() {
 //        setContentView(R.layout.lazyscroll);
-        lazyScrollView = (LazyScrollView) findViewById(R.id.waterfall_scroll);
+        lazyScrollView = (LazyScrollView) this.main.findViewById(this.waterfall_scrollId);
         lazyScrollView.getView();
         lazyScrollView.setOnScrollListener(this);
-        waterfall_container = (LinearLayout) findViewById(R.id.waterfall_container);
-        progressbar = (LinearLayout) findViewById(R.id.progressbar);
-        loadtext = (TextView) findViewById(R.id.loadtext);
+        waterfall_container = (LinearLayout)  this.main.findViewById(this.watercontainerId);
+        progressbar = (LinearLayout)  this.main.findViewById(this.progressbarId);
+        loadtext = (TextView)  this.main.findViewById(this.loadtextId);
 
-        item_width = getWindowManager().getDefaultDisplay().getWidth();
+        item_width =  this.main.getWindowManager().getDefaultDisplay().getWidth();
         linearLayouts = new ArrayList<LinearLayout>();
 
         // 娣诲姞涓夊垪鍒皐aterfall_container
-
         for (int i = 0; i < column; i++) {
-            LinearLayout layout = new LinearLayout(this);
+            LinearLayout layout = new LinearLayout( this.main);
             LinearLayout.LayoutParams itemParam = new LinearLayout.LayoutParams(
                     item_width, ViewGroup.LayoutParams.WRAP_CONTENT);
             layout.setOrientation(LinearLayout.VERTICAL);
@@ -67,16 +85,30 @@ public class waterFallActivity extends Activity implements
             linearLayouts.add(layout);
             waterfall_container.addView(layout);
         }
-
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        initView();
-        assetManager = this.getAssets();
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        initView();
+//        assetManager = this.getAssets();
+//        // 获取显示图片宽度
+//        int Image_width = (getWindowManager().getDefaultDisplay().getWidth() - 4) / 3;
+//        try {
+//            image_filenames = Arrays.asList(assetManager.list(file));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        // 绗竴娆″姞杞?
+//        addImage(current_page, count);
+//
+//    }
+
+    public void  initImage()
+    {
+        assetManager =  this.main.getAssets();
         // 获取显示图片宽度
-        int Image_width = (getWindowManager().getDefaultDisplay().getWidth() - 4) / 3;
+        int Image_width = ( this.main.getWindowManager().getDefaultDisplay().getWidth() - 4) / 3;
         try {
             image_filenames = Arrays.asList(assetManager.list(file));
         } catch (IOException e) {
@@ -85,6 +117,7 @@ public class waterFallActivity extends Activity implements
         // 绗竴娆″姞杞?
         addImage(current_page, count);
 
+        this.IsLoaded = true;
     }
 
     /***
@@ -103,13 +136,11 @@ public class waterFallActivity extends Activity implements
             if (j >= column)
                 j = 0;
         }
-
     }
-
 
     private void addBitMapToImage(String imageName, int j, int i) {
         ImageView imageView = getImageview(imageName);
-        asyncTask = new ImageDownLoadAsyncTask(this, imageName, imageView,
+        asyncTask = new ImageDownLoadAsyncTask( this.main,this.file, imageName, imageView,
                 item_width);
 
         asyncTask.setProgressbar(progressbar);
@@ -123,9 +154,9 @@ public class waterFallActivity extends Activity implements
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-				Toast.makeText(waterFallActivity.this,
-                        "鎮ㄧ偣鍑讳簡" + v.getTag() + "涓狪tem", Toast.LENGTH_SHORT)
-						.show();
+//				Toast.makeText(main,
+//                        "鎮ㄧ偣鍑讳簡" + v.getTag() + "涓狪tem", Toast.LENGTH_SHORT)
+//						.show();
 
             }
         });
@@ -140,13 +171,15 @@ public class waterFallActivity extends Activity implements
     public ImageView getImageview(String imageName) {
         BitmapFactory.Options options = getBitmapBounds(imageName);
         // 鍒涘缓鏄剧ず鍥剧墖鐨勫璞?
-        ImageView imageView = new ImageView(this);
+        ImageView imageView = new ImageView(this.main);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.FILL_PARENT);
         imageView.setLayoutParams(layoutParams);
         //
         imageView.setMinimumHeight(options.outHeight);
         imageView.setMinimumWidth(options.outWidth);
+//        imageView.setAdjustViewBounds(true);
+
         imageView.setPadding(2, 0, 2, 2);
         imageView.setBackgroundResource(R.drawable.image_border);
         if (options != null)
@@ -161,7 +194,7 @@ public class waterFallActivity extends Activity implements
     public BitmapFactory.Options getBitmapBounds(String imageName) {
         int h, w;
         BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;// 鍙繑鍥瀊itmap鐨勫ぇ灏忥紝鍙互鍑忓皯鍐呭瓨浣跨敤锛岄槻姝OM.
+        options.inJustDecodeBounds = true;
         InputStream is = null;
         try {
             is = assetManager.open(file + "/" + imageName);
@@ -170,7 +203,6 @@ public class waterFallActivity extends Activity implements
         }
         BitmapFactory.decodeStream(is, null, options);
         return options;
-
     }
 
     @Override

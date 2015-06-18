@@ -10,36 +10,26 @@ android:layout_height="match_parent">
             android:layout_height="wrap_content" />
         <!-- FrameLayout的id属性必须为 @android:id/tabcontent-->
         <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="fill_parent">
-            <TextView android:id="@+id/view1"  android:layout_width="fill_parent" android:layout_height="fill_parent"
-                android:text="AFAFAF" />
-            <TextView android:id="@+id/view2" android:layout_width="fill_parent" android:layout_height="fill_parent"
-                android:text="AFAFAF" />
-            <TextView android:id="@+id/view3" android:layout_width="fill_parent" android:layout_height="fill_parent"
-                android:text="SDFGF" />
-            <TextView android:id="@+id/view4" android:layout_width="fill_parent" android:layout_height="fill_parent"
-                android:text="SDFGF" />
-            <!--<TextView android:id="@+id/view5" android:layout_width="fill_parent" android:layout_height="fill_parent"-->
-                <!--android:text="SDFGF" />-->
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="@android:color/white"
-                android:id="@+id/view5"
+                android:id="@+id/view1"
                 android:orientation="vertical" >
 
                 <include
-                    android:id="@+id/progressbar"
+                    android:id="@+id/progressbar1"
                     layout="@layout/loading" />
 
                 <com.guibao.giser.mystadium.waterFall.LazyScrollView
-                    android:id="@+id/waterfall_scroll"
+                    android:id="@+id/waterfall_scroll1"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="1" >
 
                     <LinearLayout
-                        android:id="@+id/waterfall_container"
+                        android:id="@+id/waterfall_container1"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:orientation="horizontal"
@@ -48,7 +38,7 @@ android:layout_height="match_parent">
                 </com.guibao.giser.mystadium.waterFall.LazyScrollView>
 
                 <TextView
-                    android:id="@+id/loadtext"
+                    android:id="@+id/loadtext1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/loading_bg"
@@ -56,7 +46,150 @@ android:layout_height="match_parent">
                     android:padding="10dp"
                     android:text="Loading..."
                     android:textColor="@android:color/background_dark" />
+            </LinearLayout>
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@android:color/white"
+                android:id="@+id/view2"
+                android:orientation="vertical" >
 
+                <include
+                    android:id="@+id/progressbar2"
+                    layout="@layout/loading" />
+
+                <com.guibao.giser.mystadium.waterFall.LazyScrollView
+                    android:id="@+id/waterfall_scroll2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <LinearLayout
+                        android:id="@+id/waterfall_container2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal"
+                        android:padding="2dp" >
+                    </LinearLayout>
+                </com.guibao.giser.mystadium.waterFall.LazyScrollView>
+
+                <TextView
+                    android:id="@+id/loadtext2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/loading_bg"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Loading..."
+                    android:textColor="@android:color/background_dark" />
+            </LinearLayout>
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@android:color/white"
+                android:id="@+id/view3"
+                android:orientation="vertical" >
+
+                <include
+                    android:id="@+id/progressbar3"
+                    layout="@layout/loading" />
+
+                <com.guibao.giser.mystadium.waterFall.LazyScrollView
+                    android:id="@+id/waterfall_scroll3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <LinearLayout
+                        android:id="@+id/waterfall_container3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal"
+                        android:padding="2dp" >
+                    </LinearLayout>
+                </com.guibao.giser.mystadium.waterFall.LazyScrollView>
+
+                <TextView
+                    android:id="@+id/loadtext3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/loading_bg"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Loading..."
+                    android:textColor="@android:color/background_dark" />
+            </LinearLayout>
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@android:color/white"
+                android:id="@+id/view4"
+                android:orientation="vertical" >
+
+                <include
+                    android:id="@+id/progressbar4"
+                    layout="@layout/loading" />
+
+                <com.guibao.giser.mystadium.waterFall.LazyScrollView
+                    android:id="@+id/waterfall_scroll4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <LinearLayout
+                        android:id="@+id/waterfall_container4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal"
+                        android:padding="2dp" >
+                    </LinearLayout>
+                </com.guibao.giser.mystadium.waterFall.LazyScrollView>
+
+                <TextView
+                    android:id="@+id/loadtext4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/loading_bg"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Loading..."
+                    android:textColor="@android:color/background_dark" />
+            </LinearLayout>
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@android:color/white"
+                android:id="@+id/view5"
+                android:orientation="vertical" >
+
+                <include
+                    android:id="@+id/progressbar5"
+                    layout="@layout/loading" />
+
+                <com.guibao.giser.mystadium.waterFall.LazyScrollView
+                    android:id="@+id/waterfall_scroll5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <LinearLayout
+                        android:id="@+id/waterfall_container5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal"
+                        android:padding="2dp" >
+                    </LinearLayout>
+                </com.guibao.giser.mystadium.waterFall.LazyScrollView>
+
+                <TextView
+                    android:id="@+id/loadtext5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/loading_bg"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Loading..."
+                    android:textColor="@android:color/background_dark" />
             </LinearLayout>
 
         </FrameLayout>

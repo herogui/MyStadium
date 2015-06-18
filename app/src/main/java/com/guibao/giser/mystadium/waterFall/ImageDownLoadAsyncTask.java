@@ -27,7 +27,7 @@ public class ImageDownLoadAsyncTask extends AsyncTask<Void, Void, Bitmap> {
 	private Context context;
 	private AssetManager assetManager;
 	private int Image_width;// 显示图片的宽�?
-	private final String file = "images/";
+	private  String file = "images";
 	private LinearLayout progressbar;
 	private TextView loadtext;
 
@@ -38,13 +38,14 @@ public class ImageDownLoadAsyncTask extends AsyncTask<Void, Void, Bitmap> {
 	 * @param imagePath
 	 * @param imageView
 	 */
-	public ImageDownLoadAsyncTask(Context context, String imagePath,
+	public ImageDownLoadAsyncTask(Context context,String file, String imagePath,
 			ImageView imageView, int Image_width) {
 		this.imagePath = imagePath;
 		this.imageView = imageView;
 		this.context = context;
 		assetManager = this.context.getAssets();
 		this.Image_width = Image_width;
+		this.file = file;
 	}
 
 	public void setLoadtext(TextView loadtext) {
@@ -61,7 +62,7 @@ public class ImageDownLoadAsyncTask extends AsyncTask<Void, Void, Bitmap> {
 		try {
 			BitmapFactory.Options options = new BitmapFactory.Options();
 			options.inJustDecodeBounds = false;// 这里只返回bitmap的大�?
-			InputStream inputStream = assetManager.open(file + imagePath);
+			InputStream inputStream = assetManager.open(file+"/" + imagePath);
 			Bitmap bitmap = BitmapFactory.decodeStream(inputStream, null,
 					options);
 			return bitmap;
