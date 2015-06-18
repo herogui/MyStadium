@@ -45,7 +45,7 @@ public class waterFallActivity extends Activity implements
      * init view
      */
     public void initView() {
-        setContentView(R.layout.main);
+//        setContentView(R.layout.lazyscroll);
         lazyScrollView = (LazyScrollView) findViewById(R.id.waterfall_scroll);
         lazyScrollView.getView();
         lazyScrollView.setOnScrollListener(this);
